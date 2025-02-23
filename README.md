@@ -183,5 +183,3 @@ The Dockerfile sets up the environment to run:
 - ✅ Unit tests with Vitest
 - ✅ End-to-End tests with Cypress
 
-### TRADEOFFS
-
