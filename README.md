@@ -1,6 +1,6 @@
 # Hey reviewer! This is the  Live demo
 
-## Tech stack - [live demo here](site_url)
+## Tech stack - [live demo here](https://grand-buttercream-53409f.netlify.app/)
 
 ### Why Vue3?
 
