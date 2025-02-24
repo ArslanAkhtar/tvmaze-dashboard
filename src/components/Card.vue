@@ -1,11 +1,19 @@
 <template>
   <div class="relative" data-test-id="show-card">
     <div
-      class="group w-40 sm:w-48 md:w-56 rounded-lg overflow-hidden bg-gray-900 shadow-lg cursor-pointer"
+      class="group w-40 sm:w-48 md:w-56 rounded-lg overflow-hidden bg-gray-900 shadow-lg cursor-pointer relative"
       data-test-id="image-container"
       v-bind="hoverEvents"
       @click="navigateToRoute(RouteNavigation.ShowDetails, { id: show?.id })"
     >
+      <div
+        v-if="show?.rating?.average"
+        class="absolute top-2 right-2 bg-black bg-opacity-70 text-yellow-400 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"
+        data-test-id="rating-badge"
+      >
+        ⭐ {{ show.rating.average }}/10
+      </div>
+
       <img
         :src="imgURL(show?.image?.medium)"
         alt="Item Image"
@@ -22,6 +30,13 @@
       @mouseleave="hovered = false"
       @click="navigateToRoute(RouteNavigation.ShowDetails, { id: show?.id })"
     >
+      <div
+        v-if="show?.rating?.average"
+        class="absolute top-2 right-2 bg-black bg-opacity-70 text-yellow-400 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"
+        data-test-id="rating-badge"
+      >
+        ⭐ {{ show.rating.average }}/10
+      </div>
       <img
         :src="imgURL(show?.image?.medium)"
         alt="Item Image"
